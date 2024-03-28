@@ -15,11 +15,11 @@
             "line": 4,
             "name": "the user is logged into the Webshop",
             "match": {
-              "location": "src\\steps\\webshop.steps.ts:3"
+              "location": "src\\steps\\webshop.steps.ts:11"
             },
             "result": {
               "status": "passed",
-              "duration": 2011700
+              "duration": 5263964199
             }
           },
           {
@@ -57,11 +57,11 @@
             "line": 5,
             "name": "the user orders a product in the shopping cart",
             "match": {
-              "location": "src\\steps\\webshop.steps.ts:7"
+              "location": "src\\steps\\webshop.steps.ts:35"
             },
             "result": {
               "status": "passed",
-              "duration": 1957600
+              "duration": 3586599
             }
           },
           {
@@ -105,11 +105,11 @@
             "line": 10,
             "name": "the user completes the checkout process with the following parameters",
             "match": {
-              "location": "src\\steps\\webshop.steps.ts:14"
+              "location": "src\\steps\\webshop.steps.ts:42"
             },
             "result": {
               "status": "passed",
-              "duration": 347799
+              "duration": 595799
             }
           },
           {
@@ -118,11 +118,11 @@
             "line": 16,
             "name": "the price is added correctly",
             "match": {
-              "location": "src\\steps\\webshop.steps.ts:23"
+              "location": "src\\steps\\webshop.steps.ts:51"
             },
             "result": {
               "status": "passed",
-              "duration": 264899
+              "duration": 550300
             }
           },
           {
@@ -131,11 +131,11 @@
             "line": 17,
             "name": "the success message is displayed correctly",
             "match": {
-              "location": "src\\steps\\webshop.steps.ts:27"
+              "location": "src\\steps\\webshop.steps.ts:55"
             },
             "result": {
               "status": "passed",
-              "duration": 464899
+              "duration": 881399
             }
           }
         ],
