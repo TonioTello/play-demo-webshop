@@ -1,5 +1,6 @@
 Feature: Webshop
 
+  @webShop
   Scenario: Shipping Cost
     Given the user is logged into the Webshop
     When the user orders a product in the shopping cart

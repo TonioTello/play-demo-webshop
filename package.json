@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:testtres": "npx playwright test --project=chromium --grep @testtres --debug"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@cucumber/cucumber": "^10.3.2",
-    "ts-node": "^10.9.2"
-  },
   "devDependencies": {
+    "@cucumber/cucumber": "^8.5.2",
     "@playwright/test": "^1.42.1",
-    "@types/node": "^20.11.30"
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2"
   }
 }
