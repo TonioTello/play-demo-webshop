@@ -1,0 +1,174 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "webshop;shipping-cost",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Shipping Cost",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1807282100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "the user is logged into the Webshop",
+            "match": {
+              "location": "src\\steps\\webShop.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2536819899
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "product",
+                      "Blue Jeans"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "itemPrice",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "itemQuantity",
+                      "25"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "cardNumber",
+                      "1234567890"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 6,
+            "name": "the user orders a product in the shopping cart",
+            "match": {
+              "location": "src\\steps\\webShop.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3018187500
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "cardholderName",
+                      "Goku"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "cardNumber",
+                      "1234567890"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "expirationMonth",
+                      "10"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "expirationYear",
+                      "2030"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "cardCode",
+                      "123"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 11,
+            "name": "the user completes the checkout process with the following parameters",
+            "match": {
+              "location": "src\\steps\\webShop.steps.ts:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2534736100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "the price is added correctly",
+            "match": {
+              "location": "src\\steps\\webShop.steps.ts:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3129083300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the success message is displayed correctly",
+            "match": {
+              "location": "src\\steps\\webShop.steps.ts:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 889600
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 419876199
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@webShop",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "webshop",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Webshop",
+    "tags": [],
+    "uri": "src\\feature\\webShop.feature"
+  }
+]
