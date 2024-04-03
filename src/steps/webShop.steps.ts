@@ -12,7 +12,9 @@ Before(async function () {
 });
 
 After(async function () {
-  await this.page.close(); // Close the browser page after each scenario
+  await this.page?.close();
+  await this.context?.close();
+  await this.browser.close();
 });
 
 Given("the user is logged into the Webshop", async function () {

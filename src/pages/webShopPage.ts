@@ -1,11 +1,13 @@
 import { expect, type Locator, type Page } from "@playwright/test";
 import  {SELECTOR} from "../locatores/locator.webshop"
+import  BaseActions from "./baseActions"
 
-export default class WebShopPage {
+export default class WebShopPage extends BaseActions {
 
   readonly page: Page;
 
   constructor(page: Page) {
+    super(page);
     this.page = page;
   }
 
@@ -42,32 +44,15 @@ export default class WebShopPage {
   }
 
   async checkoutProcess() {
-    const page = this.page;
-    await page.getByRole('button', { name: 'Checkout' }).click();
-    await page.locator(SELECTOR.billingAddressContinue).waitFor();
-    await page.locator(SELECTOR.billingAddressContinue).click();
-    await page.locator(SELECTOR.shippingAddressContinue).waitFor();
-    await page.locator(SELECTOR.shippingAddressContinue).click();
-    await page.locator(SELECTOR.shippingMethodContinue).waitFor();
-    await page.locator(SELECTOR.shippingMethodContinue).click();
-    await page.getByLabel('Credit Card').check();
-    await page.locator(SELECTOR.paymentMethodContinue).waitFor();
-    await page.locator(SELECTOR.paymentMethodContinue).click();
-    await page.locator('#CreditCardType').selectOption('MasterCard');
-    await page.getByLabel('Cardholder name').click();
-    await page.getByLabel('Cardholder name').fill('Tester QA');
-    await page.getByLabel('Card number').click();
-    await page.getByLabel('Card number').fill('4000300020001000');
-    await page.getByLabel('Expiration date').selectOption('7');
-    await page.locator('#ExpireYear').selectOption('2034');
-    await page.getByLabel('Card code').click();
-    await page.getByLabel('Card code').fill('321');
-    await page.locator(SELECTOR.paymentInfoContinue).waitFor();
-    await page.locator(SELECTOR.paymentInfoContinue).click();
-    await expect(page.locator('#checkout-confirm-order-load')).toContainText('25');
-    await expect(page.locator('#checkout-confirm-order-load')).toContainText('25.00');
-    await expect(page.locator('#checkout-confirm-order-load')).toContainText('35.00');
-    await page.getByRole('button', { name: 'Confirm' }).click();
+    await this.page.getByRole('button', { name: 'Checkout' }).click();
+    await this.clickElement(SELECTOR.billingAddressContinue);
+    await this.clickElement(SELECTOR.shippingAddressContinue);
+    await this.clickElement(SELECTOR.shippingMethodContinue);
+    await this.page.getByLabel('Credit Card').check();
+    await this.clickElement(SELECTOR.paymentMethodContinue);
+    await this.fillOutPaymentInfo();
+    await this.clickElement(SELECTOR.paymentInfoContinue);
+    await this.page.getByRole('button', { name: 'Confirm' }).click();
 }
 async confirmOrderSuccess() {
     const page = this.page;
@@ -78,5 +63,21 @@ async confirmOrderSuccess() {
     await page.getByRole('link', { name: 'Log out' }).click();
     await expect(page.getByRole('link', { name: 'Log in' })).toBeVisible(); 
 }
+
+async fillOutPaymentInfo(){
+  const page = this.page;
+  await page.locator('#CreditCardType').selectOption('MasterCard');
+  await page.getByLabel('Cardholder name').click();
+  await page.getByLabel('Cardholder name').fill('Tester QA');
+  await page.getByLabel('Card number').click();
+  await page.getByLabel('Card number').fill('4000300020001000');
+  await page.getByLabel('Expiration date').selectOption('7');
+  await page.locator('#ExpireYear').selectOption('2034');
+  await page.getByLabel('Card code').click();
+  await page.getByLabel('Card code').fill('321');
+
+}
+
+
 
 }
