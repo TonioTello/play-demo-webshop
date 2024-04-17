@@ -52,4 +52,5 @@ Then("the price is added correctly", async function () {
 
 Then("the success message is displayed correctly", async function () {
   console.log("the success message is displayed correctly");
+  console.log("the success message is displayed correctly");
 });
