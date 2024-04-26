@@ -1,6 +1,8 @@
 import { expect, type Locator, type Page } from "@playwright/test";
 import  {SELECTOR} from "../locatores/locator.webshop"
 import  BaseActions from "./baseActions"
+import {CommonMethods } from "../utils/commonMethods";
+import { stringify } from "querystring";
 
 export default class WebShopPage extends BaseActions {
 
@@ -66,16 +68,17 @@ async confirmOrderSuccess() {
 
 async fillOutPaymentInfo(){
   const page = this.page;
+  const expireMonth = (CommonMethods.getCurrentDate().month + 4 ) % 12;
+  const expireYear = CommonMethods.getCurrentDate().year + 3;
   await page.locator('#CreditCardType').selectOption('MasterCard');
   await page.getByLabel('Cardholder name').click();
   await page.getByLabel('Cardholder name').fill('Tester QA');
   await page.getByLabel('Card number').click();
   await page.getByLabel('Card number').fill('4000300020001000');
-  await page.getByLabel('Expiration date').selectOption('7');
-  await page.locator('#ExpireYear').selectOption('2034');
+  await page.getByLabel('Expiration date').selectOption(expireMonth.toString());
+  await page.locator('#ExpireYear').selectOption(expireYear.toString());
   await page.getByLabel('Card code').click();
   await page.getByLabel('Card code').fill('321');
-
 }
 
 
