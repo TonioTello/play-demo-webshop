@@ -46,7 +46,7 @@ npx cucumber-js
 ```
 ## Contributors 
 
-[Neyffer A Palacios Tello](https://github.com/TonioTello) 
+[Neyffer Antonio Palacios Tello](https://github.com/TonioTello) 
 
 This README.md file provides a basic overview of the Automation Framework with Playwright and Cucumber, including the scenario description, setup instructions, and commands for running the tests.
 
